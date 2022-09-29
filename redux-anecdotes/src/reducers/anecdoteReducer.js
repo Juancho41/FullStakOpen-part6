@@ -76,7 +76,7 @@ export const createAnec = content => {
 }
 
 export const updateVote = anecdote => {
-  
+
   const updatedAnec = { ...anecdote,
                 votes: anecdote.votes +1
   }
@@ -86,6 +86,7 @@ export const updateVote = anecdote => {
     dispatch(voteAnec(updatedVote.id))
   }
 }
+
 
 // const reducer = (state = initialState, action) => {
 //   switch (action.type) {

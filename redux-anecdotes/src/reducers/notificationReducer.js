@@ -16,10 +16,24 @@ const notifSlice = createSlice ({
         },
         nullNotif (state, action) {
             return state = null
+        },
+        newNotif (state, action) {
+
+            return state = action.payload
         }
     }
 
 })
 
-export const { voteNotif, createNotif, nullNotif } = notifSlice.actions
+export const setNotif = (notif, time) => {
+
+    return dispatch => {
+        dispatch(newNotif(notif))
+        setTimeout(() => {
+            dispatch(nullNotif())
+          }, time*1000)
+    }
+  }
+
+export const { voteNotif, createNotif, nullNotif, newNotif } = notifSlice.actions
 export default notifSlice.reducer

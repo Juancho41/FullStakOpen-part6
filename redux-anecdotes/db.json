@@ -32,13 +32,23 @@
     },
     {
       "content": "There was one time..",
-      "votes": 2,
+      "votes": 8,
       "id": "9b4zt-6"
     },
     {
       "content": "Another time...",
-      "votes": 3,
+      "votes": 5,
       "id": "MhvLdg0"
+    },
+    {
+      "content": "For the last time...",
+      "votes": 0,
+      "id": "PTcXd6i"
+    },
+    {
+      "content": "One more time...",
+      "votes": 1,
+      "id": "2EOL351"
     }
   ]
 }
