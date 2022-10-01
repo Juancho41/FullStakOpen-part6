@@ -12,7 +12,7 @@ const AnecdoteList = () => {
 
     const vote = (anecdote) => {
         dispatch(updateVote(anecdote))
-        dispatch(setNotif(`you voted '${anecdote.content}'`, 2))
+        dispatch(setNotif(`you voted '${anecdote.content}'`, 5))
     }
 
     if (filterAnecs !== '') {

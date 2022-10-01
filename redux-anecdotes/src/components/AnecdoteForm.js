@@ -1,19 +1,19 @@
-import { useDispatch } from 'react-redux'
+//import { useDispatch } from 'react-redux'
 import { createAnec } from '../reducers/anecdoteReducer'
-
+import { connect } from 'react-redux'
 import { setNotif } from '../reducers/notificationReducer'
 
-const AnecdoteForm = () => {
+const AnecdoteForm = (props) => {
 
-    const dispatch = useDispatch()
+    //const dispatch = useDispatch()
 
     const addAnec = async (event) => {
         event.preventDefault()
         const content = event.target.anec.value
         event.target.anec.value = ''
-        dispatch(createAnec(content))
-        dispatch(setNotif(`'${content} created'`, 2))
-      }
+        props.createAnec(content)
+        props.setNotif(`'${content} created'`, 2)
+    }
 
     return (
         <div>
@@ -26,4 +26,18 @@ const AnecdoteForm = () => {
     )
 }
 
-export default AnecdoteForm
+const mapStateToProps = (state) => {
+    return {
+        anecdotes: state.anecdotes
+    }
+}
+
+const mapDispatchToProps = {
+    createAnec,
+    setNotif
+}
+
+const ConnectedFilter = connect(mapStateToProps, mapDispatchToProps)(AnecdoteForm)
+export default ConnectedFilter
+
+//export default AnecdoteForm
